@@ -9,6 +9,28 @@ import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/education.css';
 
+const styles = {
+  mainContainer: {
+    minHeight: '100vh',
+    padding: '50px 0',
+  },
+  timelineContainer: {
+    padding: '20px',
+    borderRadius: '15px',
+    transition: 'all 0.3s ease-in-out',
+  },
+  educationIcon: {
+    width: '60px',
+    height: '60px',
+    borderRadius: '50%',
+    transition: 'transform 0.3s ease-in-out',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    }
+  }
+};
+
 function Education(props) {
   const theme = useContext(ThemeContext);
   const { header } = props;
@@ -24,28 +46,47 @@ function Education(props) {
       .then((res) => setData(res))
       .catch((err) => err);
 
-    if (window?.innerWidth < 576) {
-      setMode('VERTICAL');
-    }
+    // Set responsive width
+    const handleResize = () => {
+      if (window.innerWidth < 576) {
+        setMode('VERTICAL');
+        setWidth('90vw');
+      } else if (window.innerWidth < 768) {
+        setWidth('90vw');
+      } else if (window.innerWidth < 1024) {
+        setWidth('75vw');
+      } else {
+        setWidth('50vw');
+      }
+    };
 
-    if (window?.innerWidth < 576) {
-      setWidth('90vw');
-    } else if (window?.innerWidth >= 576 && window?.innerWidth < 768) {
-      setWidth('90vw');
-    } else if (window?.innerWidth >= 768 && window?.innerWidth < 1024) {
-      setWidth('75vw');
-    } else {
-      setWidth('50vw');
-    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    // Apply consistent background
+    document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.minHeight = '100vh';
+    document.body.style.margin = '0';
+    document.body.style.backgroundRepeat = 'no-repeat';
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      document.body.style.background = '';
+      document.body.style.backgroundAttachment = '';
+      document.body.style.minHeight = '';
+      document.body.style.margin = '';
+      document.body.style.backgroundRepeat = '';
+    };
   }, []);
 
   return (
-    <>
+    <div style={styles.mainContainer}>
       <Header title={header} />
       {data ? (
         <Fade>
           <div style={{ width }} className="section-content-container">
-            <Container>
+            <Container style={styles.timelineContainer}>
               <Chrono
                 hideControls
                 allowDynamicUpdate
@@ -56,9 +97,15 @@ function Education(props) {
                 theme={{
                   primary: theme.accentColor,
                   secondary: theme.accentColor,
-                  cardBgColor: theme.chronoTheme.cardBgColor,
-                  cardForeColor: theme.chronoTheme.cardForeColor,
-                  titleColor: theme.chronoTheme.titleColor,
+                  cardBgColor: 'rgba(255, 255, 255, 0.9)',
+                  cardForeColor: '#2c3e50',
+                  titleColor: '#2c3e50',
+                }}
+                classNames={{
+                  card: 'education-card',
+                  cardTitle: 'education-card-title',
+                  cardSubTitle: 'education-card-subtitle',
+                  cardText: 'education-card-text'
                 }}
               >
                 <div className="chrono-icons">
@@ -67,6 +114,13 @@ function Education(props) {
                       key={education.icon.src}
                       src={education.icon.src}
                       alt={education.icon.alt}
+                      style={styles.educationIcon}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'scale(1.1)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'scale(1)';
+                      }}
                     />
                   ) : null))}
                 </div>
@@ -75,7 +129,7 @@ function Education(props) {
           </div>
         </Fade>
       ) : <FallbackSpinner /> }
-    </>
+    </div>
   );
 }
 
