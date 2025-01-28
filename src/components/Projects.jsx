@@ -9,11 +9,20 @@ import ProjectCard from './projects/ProjectCard';
 import FallbackSpinner from './FallbackSpinner';
 
 const styles = {
+  mainContainer: {
+    minHeight: '100vh',
+    padding: '50px 0',
+  },
   containerStyle: {
     marginBottom: 25,
   },
   showMoreStyle: {
     margin: 25,
+    padding: '10px 25px',
+    borderRadius: '25px',
+    fontSize: '1.1rem',
+    transition: 'all 0.3s ease-in-out',
+    fontWeight: 500,
   },
 };
 
@@ -30,7 +39,23 @@ const Projects = (props) => {
       .then((res) => res.json())
       .then((res) => setData(res))
       .catch((err) => err);
+  
+    // Apply consistent background
+    document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.minHeight = '100vh';
+    document.body.style.margin = '0';
+    document.body.style.backgroundRepeat = 'no-repeat';
+  
+    return () => {
+      document.body.style.background = '';
+      document.body.style.backgroundAttachment = '';
+      document.body.style.minHeight = '';
+      document.body.style.margin = '';
+      document.body.style.backgroundRepeat = '';
+    };
   }, []);
+  
   const numberOfItems = showMore && data ? data.length : 6;
   return (
     <>
