@@ -8,28 +8,58 @@ import ReactMarkdown from 'react-markdown';
 
 const styles = {
   badgeStyle: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingLeft: 12,
+    paddingRight: 12,
+    paddingTop: 6,
+    paddingBottom: 6,
     margin: 5,
+    borderRadius: '15px',
+    fontWeight: 500,
+    fontSize: '0.9rem',
+    transition: 'all 0.3s ease-in-out',
   },
   cardStyle: {
-    borderRadius: 10,
+    borderRadius: 15,
+    border: 'none',
+    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
+    transition: 'all 0.3s ease-in-out',
+    overflow: 'hidden',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   cardTitleStyle: {
-    fontSize: 24,
-    fontWeight: 700,
+    fontSize: '1.5rem',
+    fontWeight: 600,
+    marginBottom: '15px',
+    fontFamily: "'Poppins', sans-serif",
+    color: '#2c3e50',
   },
   cardTextStyle: {
     textAlign: 'left',
-  },
-  linkStyle: {
-    textDecoration: 'none',
-    padding: 10,
+    fontSize: '1.1rem',
+    color: '#34495e',
+    lineHeight: '1.6',
   },
   buttonStyle: {
     margin: 5,
+    padding: '8px 20px',
+    borderRadius: '20px',
+    fontWeight: 500,
+    transition: 'all 0.3s ease-in-out',
+  },
+  cardImageStyle: {
+    height: '200px',
+    objectFit: 'cover',
+    borderBottom: '1px solid rgba(0,0,0,0.1)',
+  },
+  cardBodyStyle: {
+    padding: '1.5rem',
+    flex: '1 1 auto',
+  },
+  cardFooterStyle: {
+    padding: '1rem 1.5rem',
+    borderTop: '1px solid rgba(0,0,0,0.1)',
   },
 };
 
@@ -45,18 +75,30 @@ const ProjectCard = (props) => {
         style={{
           ...styles.cardStyle,
           backgroundColor: theme.cardBackground,
-          borderColor: theme.cardBorderColor,
         }}
-        text={theme.bsSecondaryVariant}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-10px)';
+          e.currentTarget.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+        }}
       >
-        <Card.Img variant="top" src={project?.image} />
-        <Card.Body>
+        {project?.image && (
+          <Card.Img 
+            variant="top" 
+            src={project.image} 
+            style={styles.cardImageStyle}
+          />
+        )}
+        <Card.Body style={styles.cardBodyStyle}>
           <Card.Title style={styles.cardTitleStyle}>{project.title}</Card.Title>
           <Card.Text style={styles.cardTextStyle}>
             {parseBodyText(project.bodyText)}
           </Card.Text>
         </Card.Body>
-
+  
         <Card.Body>
           {project?.links?.map((link) => (
             <Button
@@ -64,13 +106,22 @@ const ProjectCard = (props) => {
               style={styles.buttonStyle}
               variant={'outline-' + theme.bsSecondaryVariant}
               onClick={() => window.open(link.href, '_blank')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
             >
               {link.text}
             </Button>
           ))}
         </Card.Body>
         {project.tags && (
-          <Card.Footer style={{ backgroundColor: theme.cardFooterBackground }}>
+          <Card.Footer style={{
+            ...styles.cardFooterStyle,
+            backgroundColor: theme.cardFooterBackground
+          }}>
             {project.tags.map((tag) => (
               <Badge
                 key={tag}
