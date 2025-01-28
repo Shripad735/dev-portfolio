@@ -11,23 +11,55 @@ import FallbackSpinner from './FallbackSpinner';
 import '../css/experience.css';
 
 const styles = {
+  mainContainer: {
+    minHeight: '100vh',
+    padding: '50px 0',
+  },
   ulStyle: {
     listStylePosition: 'outside',
     paddingLeft: 20,
+    fontSize: '1.1rem',
+    color: '#2c3e50',
+    lineHeight: '1.6',
   },
   subtitleContainerStyle: {
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: 15,
+    marginBottom: 15,
   },
   subtitleStyle: {
     display: 'inline-block',
+    fontSize: '1.2rem',
+    fontWeight: 500,
   },
   inlineChild: {
     display: 'inline-block',
+    fontSize: '1.1rem',
+    color: '#7f8c8d',
   },
-  itemStyle: {
-    marginBottom: 10,
+  timelineItem: {
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    padding: '2em',
+    borderRadius: '15px',
+    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
+    transition: 'all 0.3s ease-in-out',
+    margin: '20px 0',
   },
+  itemTitle: {
+    fontSize: '1.8rem',
+    fontWeight: 600,
+    color: '#2c3e50',
+    marginBottom: '10px',
+    fontFamily: "'Poppins', sans-serif",
+    transition: 'all 0.3s ease-in-out',
+  },
+  dateStyle: {
+    background: (theme) => theme.accentColor,
+    fontSize: '1.1rem',
+    fontWeight: 500,
+    padding: '8px 16px',
+    borderRadius: '20px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  }
 };
 
 function Experience(props) {
@@ -42,29 +74,51 @@ function Experience(props) {
       .then((res) => res.json())
       .then((res) => setData(res.experiences))
       .catch((err) => err);
+  
+    // Apply consistent background
+    document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.minHeight = '100vh';
+    document.body.style.margin = '0';
+    document.body.style.backgroundRepeat = 'no-repeat';
+  
+    return () => {
+      document.body.style.background = '';
+      document.body.style.backgroundAttachment = '';
+      document.body.style.minHeight = '';
+      document.body.style.margin = '';
+      document.body.style.backgroundRepeat = '';
+    };
   }, []);
 
   return (
-    <>
+    <div style={styles.mainContainer}>
       <Header title={header} />
-
-      {data
-        ? (
+      {data ? (
+        <Fade>
           <div className="section-content-container">
             <Container>
-              <Timeline
-                lineColor={theme.timelineLineColor}
-              >
+              <Timeline lineColor={theme.timelineLineColor}>
                 {data.map((item) => (
-                  <Fade>
+                  <Fade key={item.title + item.dateText}>
                     <TimelineItem
-                      key={item.title + item.dateText}
                       dateText={item.dateText}
-                      dateInnerStyle={{ background: theme.accentColor }}
+                      dateInnerStyle={{ 
+                        background: theme.accentColor,
+                        fontSize: '1.1rem',
+                        fontWeight: 500,
+                        padding: '8px 16px',
+                        borderRadius: '20px',
+                      }}
                       style={styles.itemStyle}
                       bodyContainerStyle={{ color: theme.color }}
                     >
-                      <h2 className="item-title">
+                      <h2 className="item-title" style={{
+                        fontSize: '1.8rem',
+                        fontWeight: 600,
+                        color: '#2c3e50',
+                        marginBottom: '10px',
+                      }}>
                         {item.title}
                       </h2>
                       <div style={styles.subtitleContainerStyle}>
@@ -72,11 +126,9 @@ function Experience(props) {
                           {item.subtitle}
                         </h4>
                         {item.workType && (
-                        <h5 style={styles.inlineChild}>
-                    &nbsp;·
-                          {' '}
-                          {item.workType}
-                        </h5>
+                          <h5 style={styles.inlineChild}>
+                            &nbsp;·&nbsp;{item.workType}
+                          </h5>
                         )}
                       </div>
                       <ul style={styles.ulStyle}>
@@ -100,8 +152,9 @@ function Experience(props) {
               </Timeline>
             </Container>
           </div>
-        ) : <FallbackSpinner /> }
-    </>
+        </Fade>
+      ) : <FallbackSpinner />}
+    </div>
   );
 }
 
