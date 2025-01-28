@@ -10,13 +10,19 @@ const styles = {
   logoStyle: {
     width: 50,
     height: 40,
+    transition: 'transform 0.3s ease-in-out',
   },
 };
 
 const ExternalNavLink = styled.a`
   color: ${(props) => props.theme.navbarTheme.linkColor};
+  font-size: 1.1em;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
   &:hover {
     color: ${(props) => props.theme.navbarTheme.linkHoverColor};
+    transform: scale(1.1);
   }
   &::after {
     background-color: ${(props) => props.theme.accentColor};
@@ -25,8 +31,13 @@ const ExternalNavLink = styled.a`
 
 const InternalNavLink = styled(NavLink)`
   color: ${(props) => props.theme.navbarTheme.linkColor};
+  font-size: 1.1em;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
   &:hover {
     color: ${(props) => props.theme.navbarTheme.linkHoverColor};
+    transform: scale(1.1);
   }
   &::after {
     background-color: ${(props) => props.theme.accentColor};
@@ -58,6 +69,7 @@ const NavBar = () => {
       variant="dark"
       className="navbar-custom"
       expanded={expanded}
+      style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', padding: '10px 20px' }}
     >
       <Container>
         {data?.logo && (
@@ -71,6 +83,8 @@ const NavBar = () => {
                   ? { height: data?.logo?.height, width: data?.logo?.width }
                   : styles.logoStyle
               }
+              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             />
           </Navbar.Brand>
         )}
