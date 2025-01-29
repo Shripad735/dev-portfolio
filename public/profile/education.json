@@ -1,19 +1,31 @@
 {
-    "education":[
+    "education": [
         {
-            "title": "Jun 20XX - Jun 20YY",
-            "cardTitle": "B.Tech, Computer Science",
-            "cardSubtitle":"XYZ University, City",
-            "cardDetailedText": "CGPA - 9.5",
-            "icon" : {
-                "src": "images/education/lorem-ipsum.png"
+            "title": "Nov 2022 – Aug 2026",
+            "cardTitle": "B.Tech. in Comp. Engg.",
+            "cardSubtitle": "MIT Academy Of Engineering, Pune, India",
+            "cardDetailedText": "CGPA: 9.06/10",
+            "icon": {
+                "src": "images/education/study.png"
             }
         },
         {
-            "title": "Apr 20XX",
+            "title": "2020 – 2022",
+            "cardTitle": "Junior College",
+            "cardSubtitle": "MIT Junior College, Pune, India",
+            "cardDetailedText": "PCM Percentage: 78/100",
+            "icon": {
+                "src": "images/education/study.png"
+            }
+        },
+        {
+            "title": "2019 – 2020",
             "cardTitle": "High School",
-            "cardSubtitle":"ABC School, City",
-            "cardDetailedText": "Marks - 95%"
+            "cardSubtitle": "Shree Sant Dnyaneshwar Madhyamik Vidyalaya (MIT) , Kothrud",
+            "cardDetailedText": "Percentage: 93/100",
+            "icon": {
+                "src": "images/education/study.png"
+            }
         }
     ]
 }

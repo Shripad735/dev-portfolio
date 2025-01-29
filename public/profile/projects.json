@@ -1,149 +1,109 @@
 {
     "projects" : [
         {
-            "image" : "images/projects/portfolio-poster.png",
-            "title": "Dev Portfolio",
-            "bodyText": "- Developer Portfolio Website made in React\n -  Fully customisable and dynamic, easily change data and images.\n - Dark Mode Support",
+            "image" : "images/projects/shareplate-poster.png",
+            "title": "SharePlate",
+            "bodyText": "- Platform to reduce food waste by connecting restaurants with NGOs\n - Features: Real-time food listings, reservation management, location-based search, user authentication\n - Technologies: React.js, Node.js, Express.js, MongoDB, Google Maps API",
             "links": [
                 {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/dev-portfolio"
+                    "text": "Frontend GitHub",
+                    "href": "https://github.com/Shripad735/shareplate-frontend"
                 },
                 {
-                    "text": "Live",
-                    "href": "https://mayankagarwal.me"
+                    "text": "Backend GitHub",
+                    "href": "https://github.com/Shripad735/shareplate-backend"
+                },
+                {
+                    "text": "Live Demo",
+                    "href": "https://shareplate-frontend.vercel.app/"
                 }
             ],
             "tags" : [
                 "React",
-                "Portfolio",
-                "JavaScript"
+                "Node.js",
+                "MongoDB",
+                "Food Waste",
+                "Social Impact"
             ]
         },
         {
-            "image" : "images/projects/caaring-poster.png",
-            "title": "Caaring -  Cab Share App",
-            "bodyText": "- A Cab Sharing web app made using **Django** for **VIT** Students. People can create a new cab or request to join an existing cab.\n - Added User authentication and password reset using **SendGrid**.\n - Deployed on **heroku** using **gunicorn**.",
+            "image" : "images/projects/project-tracker.png",
+            "title": "Project Tracker",
+            "bodyText": "- Web application for project management with dual user roles\n - Features: Project creation, task assignment, verification system, milestone tracking\n - Technologies: React.js, Node.js, Express.js, MySQL",
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/Caaring"
+                    "href": "https://github.com/Shripad735/Project-Planner"
+                }
+            ],
+            "tags" : [
+                "React",
+                "Node.js",
+                "Express",
+                "MySQL",
+                "Project Management"
+            ]
+        },
+        {
+            "image" : "images/projects/hospital-management-system-poster.png",
+            "title": "Hospital Management System",
+            "bodyText": "- Java-based web application using JSP, Servlets, JDBC, and MySQL\n - Features: Patient records management, appointment scheduling, billing, user authentication\n - Technologies: Java, JSP, Servlets, JDBC, MySQL",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Shripad735/hospital-management-system"
+                }
+            ],
+            "tags" : [
+                "Java",
+                "JSP",
+                "Servlets",
+                "JDBC",
+                "MySQL"
+            ]
+        },
+        {
+            "image" : "images/projects/shortest-path-simulation-poster.png",
+            "title": "Shortest Path Simulation",
+            "bodyText": "- Interactive visualization of BFS, DFS, and Dijkstra's algorithms\n - Features: Interactive map, algorithm selection, step-by-step visualization, algorithm comparison\n - Technologies: React.js, Tailwind CSS, JavaScript",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Shripad735/shortest-path-simulation"
                 },
                 {
-                    "text": "Live",
-                    "href": "http://caaring.herokuapp.com"
+                    "text": "Live Demo",
+                    "href": "https://shripad735.github.io/shortest-path-simulation/"
                 }
             ],
             "tags" : [
-                "Python",
-                "Django",
-                "BootStrap",
-                "SendGrid",
-                "Heroku",
-                "Gunicorn",
-                "VIT"
+                "React",
+                "Tailwind CSS",
+                "JavaScript",
+                "Algorithms",
+                "Visualization"
             ]
         },
         {
-            "image" : "images/projects/quiet-hours-poster.jpg",
-            "title": "Quiet Hours App",
-            "bodyText": "- An Android App that **automatically silences** your phone during class hours, designed for **VITians**.\n - Option to select class **slots** and **custom time**.\n - Option to put on Vibrate instead of Silent.",
+            "image" : "images/projects/network-visualizer-poster.png",
+            "title": "Network Visualizer",
+            "bodyText": "- Educational platform for visualizing networking concepts\n - Features: Line coding, TCP/UDP traffic analysis, DNS/HTTP visualization, subnet calculator\n - Technologies: React.js, Tailwind CSS, JavaScript",
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/QuietHours-Android"
-                }
-            ],
-            "tags" : [
-                "Java",
-                "Android",
-                "Alarm Manager",
-                "VIT"
-            ]
-        },
-        {
-            "title": "Secure Chat App",
-            "bodyText": "- An Android App that allows users to send texts in real time.\n - End to End encryption using **RSA** Algorithm.\n - Uses **Firebase** database to store texts.\n - Secured with **Fingerprint** lock.",
-            "links": [
+                    "href": "https://github.com/Shripad735/comp-network"
+                },
                 {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/SecureChatApp"
+                    "text": "Live Demo",
+                    "href": "https://shripad735.github.io/comp-network/"
                 }
             ],
             "tags" : [
-                "Java",
-                "Android",
-                "Firebase",
-                "RSA"
-            ]
-        },
-        {
-            "title": "MVVM Sample App",
-            "bodyText": "- An Android App that loads data from mock API and show in both **LinearLayout** and **GridLayout RecyclerView**.\n - Offline support using **Room** DB and **NetworkBoundResource**.\n - Uses the **MVVM** architecture.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/mvvm-sample-app"
-                }
-            ],
-            "tags" : [
-                "Kotlin",
-                "Android",
-                "MVVM",
-                "Room",
-                "Coroutines",
-                "Flow",
-                "Hilt-Dagger",
-                "NetworkBoundResource"
-            ]
-        },
-        {
-            "title": "Feed List App",
-            "bodyText": "- An Android App that loads list of feeds from a **paginated** API and shows in a RecyclerView.\n - Uses the **MVVM** architecture.\n - Uses **Paging 3** library along with other Architecture Components.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/Paginated-App-Feeds-List"
-                }
-            ],
-            "tags" : [
-                "Kotlin",
-                "Android",
-                "MVVM",
-                "Paging 3",
-                "Coroutines",
-                "Flow"
-            ]
-        },
-        {
-            "title": "Task Tracker",
-            "bodyText": "- A simple Task Tracker web app made with **Angular 12**.\n - Uses **mock JSON server** to get, add, delete or update tasks.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/task-tracker-app"
-                }
-            ],
-            "tags" : [
-                "TypeScript",
-                "Angular 12",
-                "JavaScript"
-            ]
-        },
-        {
-            "title": "Image Encryption/Decryption",
-            "bodyText": "- A Web App for Image Encryption and Decryption made in **Django**.\n - Uses **SDES** algorithm for encryption/decryption.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/img-encrypt-sdes"
-                }
-            ],
-            "tags" : [
-                "Python",
-                "Django",
-                "SDES",
-                "Cryptography"
+                "React",
+                "Tailwind CSS",
+                "JavaScript",
+                "Networking",
+                "Education"
             ]
         }
     ]

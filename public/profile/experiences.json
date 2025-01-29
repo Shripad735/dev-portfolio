@@ -1,33 +1,16 @@
 {
     "experiences": [
         {
-            "title": "Software Engineer",
-            "subtitle": "XYZ Ltd",
-            "workType": "Full-time",
-            "workDescription": [
-                "Integrated **2** new product.",
-                "Worked on adding **def** to **bcd**. Improved speed by 50%."
-            ],
-            "dateText": "06/20XX – Present"
-        },
-        {
-            "title": "Software Engineer",
-            "subtitle": "XYZ Ltd",
+            "title": "Full Stack Web Development Intern",
+            "subtitle": "Core Decimal Solutions",
             "workType": "Internship",
             "workDescription": [
-                "Worked on abc."
+                "Contributed to a Full Stack Web Project called 'Project Planner,' focusing on end-to-end development of interactive web applications.",
+                "Developed the front-end using React JS, creating dynamic and responsive user interfaces to enhance user experience.",
+                "Implemented back-end server-side logic using Express JS, ensuring efficient handling of HTTP requests and API integrations.",
+                "Managed database operations using MySQL, including schema design, query optimization, and data retrieval for seamless application functionality."
             ],
-            "dateText": "01/20XX – 05/20XX"
-        },
-        {
-            "title": "App Developer",
-            "subtitle": "ABC Pvt Ltd",
-            "workType": "Freelance",
-            "workDescription": [
-                "Developed the official apps for the startup for both Android and iOS using hybrid framework.",
-                "Done bcd work."
-            ],
-            "dateText": "09/20XX – 01/20YY"
+            "dateText": "June 2024 – Aug 2024"
         }
     ]
 }
