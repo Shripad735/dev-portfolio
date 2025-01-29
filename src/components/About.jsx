@@ -51,7 +51,6 @@ const styles = {
   contentContainer: {
     padding: '40px',
     margin: '-25px 0',
-    // width: '10000px',
   },
 };
 

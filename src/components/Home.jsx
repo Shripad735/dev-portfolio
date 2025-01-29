@@ -32,7 +32,6 @@ const styles = {
     alignItems: 'center',
     padding: '20px',
     textAlign: 'center',
-    // background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
     position: 'relative',
     overflow: 'hidden',
   },
@@ -84,7 +83,6 @@ function Home() {
       .then((res) => setData(res))
       .catch((err) => console.error(err));
 
-    // Add custom styles to head
     const style = document.createElement('style');
     style.textContent = `
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
@@ -100,7 +98,6 @@ function Home() {
     `;
     document.head.appendChild(style);
 
-    //apply bg to complete page
     document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
 
     return () => {
