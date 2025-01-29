@@ -71,10 +71,9 @@ const styles = {
 function Home() {
   const [data, setData] = useState(null);
   const roles = [
-    "Full Stack Developer",
-    "Software Engineer",
-    "Problem Solver",
-    "Web Developer"
+    "Student",
+    "Fullstack Developer",
+    "Cloud Enthusiast",  
   ];
 
   useEffect(() => {
