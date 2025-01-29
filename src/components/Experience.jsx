@@ -59,7 +59,9 @@ const styles = {
     padding: '8px 16px',
     borderRadius: '20px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  }
+    color: '#fff',
+    backdropFilter: 'blur(5px)',
+}
 };
 
 function Experience(props) {
