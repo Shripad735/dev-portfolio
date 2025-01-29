@@ -9,28 +9,6 @@ import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/education.css';
 
-const styles = {
-  mainContainer: {
-    minHeight: '100vh',
-    padding: '50px 0',
-  },
-  timelineContainer: {
-    padding: '20px',
-    borderRadius: '15px',
-    transition: 'all 0.3s ease-in-out',
-  },
-  educationIcon: {
-    width: '60px',
-    height: '60px',
-    borderRadius: '50%',
-    transition: 'transform 0.3s ease-in-out',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    '&:hover': {
-      transform: 'scale(1.1)',
-    }
-  }
-};
-
 function Education(props) {
   const theme = useContext(ThemeContext);
   const { header } = props;
@@ -46,7 +24,6 @@ function Education(props) {
       .then((res) => setData(res))
       .catch((err) => err);
 
-    // Set responsive width
     const handleResize = () => {
       if (window.innerWidth < 576) {
         setMode('VERTICAL');
@@ -63,7 +40,6 @@ function Education(props) {
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    // Apply consistent background
     document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
     document.body.style.backgroundAttachment = 'fixed';
     document.body.style.minHeight = '100vh';
@@ -81,12 +57,12 @@ function Education(props) {
   }, []);
 
   return (
-    <div style={styles.mainContainer}>
+    <div className="main-container">
       <Header title={header} />
       {data ? (
         <Fade>
           <div style={{ width }} className="section-content-container">
-            <Container style={styles.timelineContainer}>
+            <Container className="timeline-container">
               <Chrono
                 hideControls
                 allowDynamicUpdate
@@ -109,26 +85,21 @@ function Education(props) {
                 }}
               >
                 <div className="chrono-icons">
-                  {data.education.map((education) => (education.icon ? (
-                    <img
-                      key={education.icon.src}
-                      src={education.icon.src}
-                      alt={education.icon.alt}
-                      style={styles.educationIcon}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.1)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)';
-                      }}
-                    />
-                  ) : null))}
+                  {data.education.map((education) => (
+                    education.icon ? (
+                      <img
+                        key={education.icon.src}
+                        src={education.icon.src}
+                        alt={education.icon.alt}
+                      />
+                    ) : null
+                  ))}
                 </div>
               </Chrono>
             </Container>
           </div>
         </Fade>
-      ) : <FallbackSpinner /> }
+      ) : <FallbackSpinner />}
     </div>
   );
 }
