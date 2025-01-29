@@ -13,6 +13,7 @@ const styles = {
     padding: '50px 0',
   },
   introTextContainer: {
+    width: '100%',
     margin: '20px 10px',
     flexDirection: 'column',
     whiteSpace: 'pre-wrap',
@@ -24,7 +25,7 @@ const styles = {
     fontFamily: "'Poppins', sans-serif",
   },
   introImageContainer: {
-    margin: '20px 10px',
+    margin: '10px 0', // Reduced margin to make image closer to the title
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
@@ -49,7 +50,7 @@ const styles = {
   },
   contentContainer: {
     padding: '40px',
-    margin: '20px 0',
+    margin: '-25px 0',
   },
 };
 
@@ -92,16 +93,16 @@ function About(props) {
           {data ? (
             <Fade>
               <Row className="align-items-center">
-                <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }} style={styles.introTextContainer}>
-                  <ReactMarkdown>{aboutContent}</ReactMarkdown>
-                </Col>
-                <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }} style={styles.introImageContainer}>
+                <Col xs={12} style={styles.introImageContainer}>
                   <img
                     src={data?.imageSource}
                     alt="profile"
                     style={styles.profileImage}
                     className="img-fluid"
                   />
+                </Col>
+                <Col xs={12} style={styles.introTextContainer}>
+                  <ReactMarkdown>{aboutContent}</ReactMarkdown>
                 </Col>
               </Row>
             </Fade>

@@ -15,8 +15,8 @@ const styles = {
     padding: '12px 20px',
   },
   logoStyle: {
-    width: 50,
-    height: 40,
+    width: 45,
+    height: 45,
     transition: 'all 0.3s ease-in-out',
   },
   togglerButton: {
