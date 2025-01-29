@@ -6,14 +6,113 @@
     justify-content: center;
 }
 
+/* Timeline cards styling */
+.education-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease-in-out !important;
+    border: none !important;
+    padding: 1.5rem !important;
+}
+
+.education-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.education-card-title {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    margin-bottom: 0.5rem !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.education-card-subtitle {
+    font-size: 1.1rem !important;
+    color: #34495e !important;
+    margin-bottom: 1rem !important;
+    font-weight: 500 !important;
+}
+
+.education-card-text {
+    font-size: 1rem !important;
+    color: #576574 !important;
+    line-height: 1.6 !important;
+}
+
+/* Timeline styling */
+.timeline-horizontal-container {
+    background: transparent !important;
+}
+
+.timeline-item-title {
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+}
+
+.timeline-item-date {
+    color: #34495e !important;
+    font-weight: 500 !important;
+}
+
+.timeline-vertical-circle {
+    background: #fff !important;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2) !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.timeline-vertical-circle:hover {
+    transform: scale(1.1) !important;
+}
+
+/* Responsive design */
 @media only screen and (max-width: 578px) {
     div.vertical-item-row > div:nth-child(1) {
         width: 20% !important;
     }
+    
     div.vertical-item-row > div:nth-child(2) {
         width: 65% !important;
     }
+    
     div.vertical-item-row > div:nth-child(3) {
         width: 15% !important;
+    }
+
+    .education-card {
+        padding: 1rem !important;
+    }
+
+    .education-card-title {
+        font-size: 1.3rem !important;
+    }
+
+    .education-card-subtitle {
+        font-size: 1rem !important;
+    }
+}
+
+/* Timeline line styling */
+.timeline-vertical-line {
+    background: rgba(52, 152, 219, 0.3) !important;
+    width: 2px !important;
+}
+
+/* Animation for cards */
+.education-card {
+    animation: fadeInUp 0.5s ease-out;
+    opacity: 1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
