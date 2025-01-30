@@ -146,5 +146,14 @@ section.timeline-card-content div.card-description > p {
   font-size: 3em;
   font-weight: bold;
   margin-bottom: 25px;
+  color: #000;
 }
 
+/* For logos (if SVG with fill="currentColor") */
+.logo {
+  fill: currentColor; /* Matches parent text color */
+}
+
+.logo-container {
+  color: #000; /* Black text for logos */
+}

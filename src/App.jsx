@@ -3,19 +3,18 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import useDarkMode from 'use-dark-mode';
-import AppContext from './AppContext';
+// import useDarkMode from 'use-dark-mode';
+// import AppContext from './AppContext';
 import MainApp from './MainApp';
 import GlobalStyles from './theme/GlobalStyles';
-import { lightTheme, darkTheme } from './theme/themes';
+import { lightTheme } from './theme/themes';
 
 function App() {
   window.matchMedia = null;
-  const darkMode = useDarkMode(true);
+  // const darkMode = useDarkMode(true);
 
   return (
-    <AppContext.Provider value={{ darkMode }}>
-      <ThemeProvider theme={darkMode.value ? darkTheme : lightTheme}>
+      <ThemeProvider theme={lightTheme}>
         <GlobalStyles />
         <div className="App">
           <BrowserRouter>
@@ -23,7 +22,6 @@ function App() {
           </BrowserRouter>
         </div>
       </ThemeProvider>
-    </AppContext.Provider>
   );
 }
 
