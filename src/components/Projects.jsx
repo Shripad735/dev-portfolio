@@ -59,6 +59,7 @@ const Projects = (props) => {
   const numberOfItems = showMore && data ? data.length : 6;
   return (
     <>
+    <div style={styles.mainContainer}>
       <Header title={header} />
       {data
         ? (
@@ -85,6 +86,7 @@ const Projects = (props) => {
             </Container>
           </div>
         ) : <FallbackSpinner /> }
+    </div>
     </>
   );
 };
