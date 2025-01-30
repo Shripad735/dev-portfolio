@@ -16,6 +16,7 @@ const styles = {
     fontFamily: "'Poppins', sans-serif",
     letterSpacing: '-0.02em',
     animation: 'fadeIn 1s ease-in',
+    color: '#000'
   },
   inlineChild: {
     display: 'inline-block',
@@ -86,6 +87,7 @@ function Home() {
     const style = document.createElement('style');
     style.textContent = `
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
       
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(-20px); }
