@@ -27,7 +27,7 @@ function Experience(props) {
       .then((res) => setData(res.experiences))
       .catch((err) => err);
 
-    document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+    document.body.style.background = 'linear-gradient(135deg, #e8eaef 0%,rgb(214, 218, 227) 100%)';
     document.body.style.backgroundAttachment = 'fixed';
     document.body.style.minHeight = '100vh';
     document.body.style.margin = '0';
