@@ -58,7 +58,7 @@ function About(props) {
   const { header } = props;
   const [data, setData] = useState(null);
 
-  const aboutContent = `Hello! I'm Shripad, currently pursuing Computer Engineering at MIT Academy of Engineering. I'm a friendly and enthusiastic individual who loves to code and build interesting projects. When I'm not coding, you'll find me: playing chess (though I'm still learning!), watching sitcoms (always up for TV show recommendations!), reading books (particularly interested in technology and fiction), and building fun side projects. I'm passionate about technology and love working in teams. I believe in collaborative learning and always try to bring positive energy to any group I work with. Whether it's a coding project or a chess match, I'm always eager to learn and improve! Let's connect and build something amazing together!`;
+  const aboutContent = `Hello! I'm Shripad, currently pursuing Computer Engineering at MIT Academy of Engineering. I'm a friendly and enthusiastic individual who loves to code and build interesting projects. When I'm not coding, you'll find me , playing chess (though I'm still learning), watching sitcoms (always up for TV show recommendations), reading books (particularly interested in technology and fiction), and building fun side projects. I'm passionate about technology and love working in team. I believe in collaborative learning and always try to bring positive energy to any group I work with. Whether it's a coding project or a chess match, I'm always eager to learn and improve! Let's connect and build something amazing together !`;
 
   useEffect(() => {
     fetch(endpoints.about, {
